@@ -1,0 +1,23 @@
+{
+  "name": "udemy-nodejs",
+  "version": "0.0.1",
+  "description": "Es un curso de node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon /03-bases-node/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OscarABazanez/udemy-nodejs.git"
+  },
+  "author": "OscarBazanez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OscarABazanez/udemy-nodejs/issues"
+  },
+  "homepage": "https://github.com/OscarABazanez/udemy-nodejs#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
