@@ -12,8 +12,8 @@ const crearArchivo = async (base = 5, listar = false) =>{
         if(listar){
             console.log(salida)
         }
-        
-        fs.writeFile(`tabla-del-${base}.txt`, salida, (err) =>{
+
+        fs.writeFile(`./output/tabla-del-${base}.txt`, salida, (err) =>{
             if(err) throw err;
             console.log('tabla creada');
         })
