@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/OscarABazanez/udemy-nodejs#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "yargs": "^17.0.1"
   }
 }
