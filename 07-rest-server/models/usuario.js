@@ -29,6 +29,17 @@ const UsuarioSchema = Schema({
     google: {
         type: Boolean,
         default: false
+    },
+    statusPay: {
+        type: String,
+        default: ''
+    },
+    paymentIntentId: {
+        type: String,
+        default: ''
+    },
+    dataPay: {
+        type: Array,
     }
 })
 
