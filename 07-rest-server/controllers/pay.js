@@ -1,7 +1,6 @@
 const { response, request } = require('express')
 const stripe = require('stripe')('sk_test_51HHLG6EsJ3x3uVHkN7LBa2hGGJ0z2elGP24X3eQfkwwoybBsyLBXn1RJmWevLUIHdENKUijdt0wuXqchS01eo1PH00bY6pZRbM');
 const Usuario = require('../models/usuario')
-const bcryptjs = require('bcryptjs')
 
 
 const createSession = async (req, res) => {

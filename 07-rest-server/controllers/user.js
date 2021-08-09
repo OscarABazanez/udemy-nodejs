@@ -62,10 +62,11 @@ const usuariosPatch = (req, res) => {
         msg: 'patch API'
     });
 }
+
 const usuariosDelete = async (req, res) => {
 
     const { id } = req.params
-
+    
     const usuario = await Usuario.findByIdAndUpdate(id, {status: false})
 
     res.json({

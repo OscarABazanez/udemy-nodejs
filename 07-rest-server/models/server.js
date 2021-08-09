@@ -8,6 +8,7 @@ class Server {
         this.port = process.env.PORT;
         this.userPath = '/v1/user'
         this.userPay = '/v1/pay'
+        this.userAuthPath = '/v1/auth'
 
         // Conectar a la BD
         this.conectarDB()
@@ -33,6 +34,7 @@ class Server {
     }
 
     routes(){
+        this.app.use(this.userAuthPath, require('../routes/auth'));
         this.app.use(this.userPath, require('../routes/user'));
         this.app.use(this.userPay, require('../routes/pay'));
         
