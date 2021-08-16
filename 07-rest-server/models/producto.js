@@ -28,6 +28,9 @@ const ProductoSchema = Schema({
     },
     disponible: {
         type: String
+    },
+    img: {
+        type: String
     }
 })
 

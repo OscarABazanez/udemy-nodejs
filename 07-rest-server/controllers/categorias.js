@@ -40,24 +40,45 @@ const obtenerCategoria = async (req=request, res=response) => {
 // Crear categoria
 const crearCategoria = async (req=request, res=response) => {
 
-    const nombre = req.body.nombre.toUpperCase()
-    
-    const categoriaDB = await Categoria.findOne({nombre})
+    let data =[]
 
-    if(categoriaDB){
-        return res.status(400).json({msg:`La categoria ${categoriaDB.nombre} ya existe`})
+    for (const elements of req.body) {
+        const usuario =req.usuario._id
+        const nombre = elements.nombre.toUpperCase()
+        const categoriaDB = await Categoria.findOne({nombre})
+        if(categoriaDB){
+            return res.status(400).json({msg:`La categoria ${categoriaDB.nombre} ya existe`})
+        }
+        data.push({nombre,usuario,status:true})
+        
     }
-
-    const data = {
-        nombre,
-        usuario: req.usuario._id
-    }
-
+ 
+    console.log(data)
     const categoria =  new Categoria( data );
-    await categoria.save();
-
+    await categoria.collection.insertMany(data);
     res.status(200).json(categoria)
 }
+
+// const crearCategoria = async (req=request, res=response) => {
+
+//     const nombre = req.body.nombre.toUpperCase()
+    
+//     const categoriaDB = await Categoria.findOne({nombre})
+
+//     if(categoriaDB){
+//         return res.status(400).json({msg:`La categoria ${categoriaDB.nombre} ya existe`})
+//     }
+
+//     const data = {
+//         nombre,
+//         usuario: req.usuario._id
+//     }
+
+//     const categoria =  new Categoria( data );
+//     await categoria.save();
+
+//     res.status(200).json(categoria)
+// }
 
 // Actualizar categoria
 const actualizarCategoria = async (req=request, res=response) => {

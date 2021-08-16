@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { check }= require('express-validator');
+const { check, body }= require('express-validator');
 const { validarCampos, validarJWT, esAdminRole} = require('../midlewares')
 const { crearCategoria, obtenerCategorias, obtenerCategoria, actualizarCategoria, eliminarCategoria } = require('../controllers')
 const { existeCategiriaPorID } = require('../helpers')
@@ -20,7 +20,8 @@ router.get('/:id',[
 // Crear categoria - Privado con un token
 router.post('/', [
     validarJWT,
-    check('nombre','El nombre es obligatorio').not().isEmpty(),
+    // check('nombre','El nombre es obligatorio').not().isEmpty(),
+    body('*.nombre','El nombre es obligatorio').not().isEmpty(),
     validarCampos
 ], crearCategoria);
 

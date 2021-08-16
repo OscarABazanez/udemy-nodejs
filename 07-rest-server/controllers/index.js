@@ -4,6 +4,7 @@ const auth = require('../controllers/auth')
 const categoria = require('../controllers/categorias')
 const productos = require('../controllers/productos')
 const buscador = require('../controllers/buscar')
+const uploads = require('../controllers/uploads')
 
 module.exports = {
     ...usuario,
@@ -12,4 +13,5 @@ module.exports = {
     ...categoria,
     ...productos,
     ...buscador,
+    ...uploads,
 }
