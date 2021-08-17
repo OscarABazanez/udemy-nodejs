@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">    
+        <title>Socket client</title>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 m-3">
+                    <h1>Socket client</h1>
+                    <p>Server status:
+                        <span id="lblOnline" class="text-success">Online</span>
+                        <span id="lblOffline" class="text-danger">Offline</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="txtMensaje" id="txtMensaje" class="form-control" placeholder="Mensaje">
+                    <button id="btnEnviar" class="btn btn-primary">Enviar</button>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+
+
+
+
+        <script src="./socket.io/socket.io.js"></script>
+        <script src="./js/socket-client.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>
